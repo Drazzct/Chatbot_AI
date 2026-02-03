@@ -29,6 +29,10 @@ def predict(sentence):
         if i["tag"] == intent:
             return random.choice(i["responses"])
 
+@app.route("/")
+def home():
+    return {"status": "ok", "message": "Chatbot API running"}
+
 @app.route("/chat", methods=["POST"])
 def chat():
     text = request.json["text"]
