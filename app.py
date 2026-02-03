@@ -5,7 +5,7 @@ from tensorflow.keras.models import load_model
 from nltk.tokenize import word_tokenize
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, resources={r"/*": {"origins": "*"}})
 
 model = load_model("chatbot_model.h5")
 

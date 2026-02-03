@@ -2,3 +2,4 @@ tensorflow
 nltk
 numpy
 flask
+flask-cors
