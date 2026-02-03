@@ -4,6 +4,7 @@ import random, json, pickle, numpy as np
 from tensorflow.keras.models import load_model
 from nltk.tokenize import word_tokenize
 import os
+
 import nltk
 nltk.download("punkt")
 
