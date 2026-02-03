@@ -1,9 +1,11 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 import random, json, pickle, numpy as np
 from tensorflow.keras.models import load_model
 from nltk.tokenize import word_tokenize
 
 app = Flask(__name__)
+CORS(app)
 
 model = load_model("chatbot_model.h5")
 
