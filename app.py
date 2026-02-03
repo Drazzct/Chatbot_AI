@@ -48,8 +48,9 @@ def chat():
     try:
         return jsonify({"response": predict(text)})
     except Exception as e:
-        print("ERROR:", e)
-        return jsonify({"response": "Bot gặp lỗi, thử lại sau nhé 😢"}), 500
+        import traceback
+        traceback.print_exc()
+        return jsonify({"error": str(e)}), 500
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
