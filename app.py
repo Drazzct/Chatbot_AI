@@ -7,6 +7,7 @@ import os
 
 import nltk
 nltk.download("punkt")
+nltk.download("punkt_tab")
 
 app = Flask(__name__)
 CORS(app, resources={r"/*": {"origins": "*"}})
