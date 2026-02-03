@@ -4,6 +4,8 @@ import random, json, pickle, numpy as np
 from tensorflow.keras.models import load_model
 from nltk.tokenize import word_tokenize
 import os
+import nltk
+nltk.download("punkt")
 
 app = Flask(__name__)
 CORS(app, resources={r"/*": {"origins": "*"}})
@@ -36,8 +38,17 @@ def home():
 
 @app.route("/chat", methods=["POST"])
 def chat():
-    text = request.json["text"]
-    return jsonify({"response": predict(text)})
+    data = request.get_json()
+    text = data.get("text", "")
+
+    if not text:
+        return jsonify({"response": "Bạn hãy nhập nội dung nhé 😊"})
+
+    try:
+        return jsonify({"response": predict(text)})
+    except Exception as e:
+        print("ERROR:", e)
+        return jsonify({"response": "Bot gặp lỗi, thử lại sau nhé 😢"}), 500
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
