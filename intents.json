@@ -1,0 +1,40 @@
+{
+    "intents": [
+        {
+            "tag": "greeting",
+            "patterns": [
+                "xin chào",
+                "chào bạn",
+                "hello",
+                "hi"
+            ],
+            "responses": [
+                "Chào bạn 👋",
+                "Xin chào!",
+                "Rất vui được gặp bạn"
+            ]
+        },
+        {
+            "tag": "name",
+            "patterns": [
+                "bạn tên gì",
+                "tên bạn là gì"
+            ],
+            "responses": [
+                "Mình là chatbot LSTM 🤖"
+            ]
+        },
+        {
+            "tag": "goodbye",
+            "patterns": [
+                "tạm biệt",
+                "bye",
+                "hẹn gặp lại"
+            ],
+            "responses": [
+                "Tạm biệt nhé!",
+                "Hẹn gặp lại 👋"
+            ]
+        }
+    ]
+}
